@@ -1,5 +1,9 @@
+import { MainHeader } from "../../components/MainHeader";
 export function Home() {
   return (
-    <h1>Home</h1>
+    <>
+      <MainHeader />
+      <h1>Home</h1>
+    </>
   );
 }
