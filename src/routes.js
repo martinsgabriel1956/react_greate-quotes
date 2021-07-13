@@ -16,7 +16,7 @@ export function Routes() {
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
           <Route path="/products" component={Products} />
-          <Route path="/products-details/:productId " component={ProductDetails} />
+          <Route path="/product-detail/:id " component={ProductDetails} />
         </Switch>
       </BrowserRouter>
     </>

@@ -10,7 +10,6 @@ export function MainHeader() {
           <li><NavLink activeClassName={'active'} to="/login">Login</NavLink></li>
           <li><NavLink activeClassName={'active'} to="/register">Register</NavLink></li>
           <li><NavLink activeClassName={'active'} to="/products">Products</NavLink></li>
-          <li><NavLink activeClassName={'active'} to="/products-details">Product details</NavLink></li>
         </ul>
       </nav>
     </Container>
