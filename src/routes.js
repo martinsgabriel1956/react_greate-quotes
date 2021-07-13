@@ -15,8 +15,8 @@ export function Routes() {
             <Redirect to="/quotes" />
           </Route>
           <Route path="/quotes" exact  component={AllQuotes} />
-          <Route path="/quotes/:id" component={NewQuote} />
-          <Route path="/new-quote" component={QuoteDetail} />
+          <Route path="/quotes/:id" component={QuoteDetail} />
+          <Route path="/new-quote" component={NewQuote} />
         </Switch>
       </BrowserRouter>
     </>
