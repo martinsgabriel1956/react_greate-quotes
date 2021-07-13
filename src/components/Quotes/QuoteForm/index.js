@@ -1,10 +1,9 @@
 import { useRef } from 'react';
 
-import Card from '../ui/Card';
+import { Card } from '../../UI/Card';
 import { Container, Loading, Control, Actions } from './styles';
 
-import LoadingSpinner from '../ui/LoadingSpinner';
-import classes from './QuoteForm.module.css';
+import { LoadingSpinner } from '../../UI/LoadingSpinner';
 
 export function QuoteForm(props) {
   const authorInputRef = useRef();
@@ -38,7 +37,7 @@ export function QuoteForm(props) {
           <label htmlFor='text'>Text</label>
           <textarea id='text' rows='5' ref={textInputRef}></textarea>
         </Control>
-        <Actions className={classes.actions}>
+        <Actions>
           <button className='btn'>Add Quote</button>
         </Actions>
       </Container>

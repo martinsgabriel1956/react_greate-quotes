@@ -1,4 +1,4 @@
-import QuoteItem from './QuoteItem';
+import { QuoteItem } from '../QuoteItem';
 
 import { Container } from './styles.js';
 
