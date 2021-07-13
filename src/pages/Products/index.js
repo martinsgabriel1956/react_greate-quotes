@@ -1,4 +1,6 @@
 import { MainHeader } from "../../components/MainHeader";
+import { Route } from "react-router-dom";
+
 export function Products() {
   return (
     <>
@@ -10,6 +12,9 @@ export function Products() {
           <li>Notebook</li>
           <li>Paper</li>
         </ul>
+        <Route path="/new-user">
+          <p>Welcome, new user</p>
+        </Route>
       </main>
     </>
   );
