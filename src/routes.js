@@ -1,11 +1,10 @@
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 
-import { Home } from "./pages/Home";
-import { Login } from "./pages/Login";
-import { ProductDetails } from "./pages/ProductDetails";
-import { Products } from "./pages/Products";
-import { Register } from "./pages/Register";
 import "./styles/global.js";
+
+import { AllQuotes } from "./pages/AllQuotes";
+import { NewQuote } from "./pages/NewQuote";
+import { QuoteDetail } from "./pages/QuoteDetail";
 
 export function Routes() {
   return (
@@ -13,13 +12,11 @@ export function Routes() {
       <BrowserRouter>
         <Switch>
           <Route path="/" exact>
-            <Redirect to="/home" />
+            <Redirect to="/quotes" />
           </Route>
-          <Route path="/home"  component={Home} />
-          <Route path="/login" component={Login} />
-          <Route path="/register" component={Register} />
-          <Route path="/products" component={Products} />
-          <Route path="/product-detail/:id " component={ProductDetails} />
+          <Route path="/quotes" exact  component={AllQuotes} />
+          <Route path="/quotes/:id" component={NewQuote} />
+          <Route path="/new-quote" component={QuoteDetail} />
         </Switch>
       </BrowserRouter>
     </>
