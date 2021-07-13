@@ -1,5 +1,7 @@
 import { Container } from './styles';
 
+import { Link } from '../QuoteItem';
+
 export function QuoteItem(props) {
   return (
     <Container>
@@ -9,9 +11,9 @@ export function QuoteItem(props) {
         </blockquote>
         <figcaption>{props.author}</figcaption>
       </figure>
-      <a className='btn'>
+      <Link to={`/quotes/${props.id}`} className='btn' >
         View Fullscreen
-      </a>
+      </Link>
     </Container>
   );
 };
