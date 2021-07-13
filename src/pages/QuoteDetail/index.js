@@ -1,12 +1,15 @@
-import { useParams } from "react-router-dom";
+import { Route, useParams } from "react-router-dom";
+
+import { Comments } from '../../components/Comments';
 
 export function QuoteDetail() {
-  const params = useParams();
+  const { id } = useParams();
 
   return (
     <>
       <h1>QuoteDetail</h1>
-      <p>{params.id}</p>
+      <p>{id}</p>
+      <Route path={`/quotes/${id}/comments`} component={Comments } />
     </>
   );
 }
