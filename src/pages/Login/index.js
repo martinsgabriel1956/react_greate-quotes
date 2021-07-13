@@ -1,7 +1,12 @@
+import { MainHeader } from "../../components/MainHeader";
+
 export function Login() {
   return (
-    <h1>Login</h1>
+    <>
+      <MainHeader />
+      <main>
+        <h1>Login</h1>
+      </main>
+    </>
   );
 }
-
-

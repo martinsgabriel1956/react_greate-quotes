@@ -1,16 +1,14 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { Container } from './styles';
-
-
 
 export function MainHeader() {
   return (
     <Container>
       <nav>
         <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/login">Login</Link></li>
-          <li><Link to="/register">Register</Link></li>
+          <li><NavLink activeClassName={'active'} to="/">Home</NavLink></li>
+          <li><NavLink activeClassName={'active'} to="/login">Login</NavLink></li>
+          <li><NavLink activeClassName={'active'} to="/register">Register</NavLink></li>
         </ul>
       </nav>
     </Container>

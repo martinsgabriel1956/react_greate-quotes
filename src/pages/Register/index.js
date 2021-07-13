@@ -1,5 +1,12 @@
+import { MainHeader } from "../../components/MainHeader";
+
 export function Register() {
   return (
-    <h1>Register</h1>
+    <>
+      <MainHeader />
+      <main>
+        <h1>Register</h1>
+      </main>
+    </>
   );
 }
