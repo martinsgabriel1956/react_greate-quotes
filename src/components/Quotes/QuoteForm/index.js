@@ -1,15 +1,18 @@
-import { useRef } from 'react';
+import { useRef, useState } from "react";
+import { Prompt } from "react-router-dom";
 
-import { Card } from '../../UI/Card';
-import { Container, Loading, Control, Actions } from './styles';
+import { Card } from "../../UI/Card";
+import { Container, Loading, Control, Actions } from "./styles";
 
-import { LoadingSpinner } from '../../UI/LoadingSpinner';
+import { LoadingSpinner } from "../../UI/LoadingSpinner";
 
 export function QuoteForm(props) {
+  const [isEntering, setIsEntering] = useState(false);
+
   const authorInputRef = useRef();
   const textInputRef = useRef();
 
-  function submitFormHandler(event) {
+  function handleSubmitForm(event) {
     event.preventDefault();
 
     const enteredAuthor = authorInputRef.current.value;
@@ -20,27 +23,38 @@ export function QuoteForm(props) {
     props.onAddQuote({ author: enteredAuthor, text: enteredText });
   }
 
-  return (
-    <Card>
-      <Container onSubmit={submitFormHandler}>
-        {props.isLoading && (
-          <Loading>
-            <LoadingSpinner />
-          </Loading>
-        )}
+  function handleFormFocused() {
+    setIsEntering(true);
+  }
+  
+  function handleFinishingEntering() {
+    setIsEntering(false);
+  }
 
-        <Control>
-          <label htmlFor='author'>Author</label>
-          <input type='text' id='author' ref={authorInputRef} />
-        </Control>
-        <Control>
-          <label htmlFor='text'>Text</label>
-          <textarea id='text' rows='5' ref={textInputRef}></textarea>
-        </Control>
-        <Actions>
-          <button className='btn'>Add Quote</button>
-        </Actions>
-      </Container>
-    </Card>
+  return (
+    <>
+      <Prompt when={isEntering} message={location => 'Are you sure you want to leave? All your entered data will be lost!'} />
+      <Card>
+        <Container onFocus={handleFormFocused} onSubmit={handleSubmitForm}>
+          {props.isLoading && (
+            <Loading>
+              <LoadingSpinner />
+            </Loading>
+          )}
+
+          <Control>
+            <label htmlFor="author">Author</label>
+            <input type="text" id="author" ref={authorInputRef} />
+          </Control>
+          <Control>
+            <label htmlFor="text">Text</label>
+            <textarea id="text" rows="5" ref={textInputRef}></textarea>
+          </Control>
+          <Actions>
+            <button onClick={handleFinishingEntering} className="btn">Add Quote</button>
+          </Actions>
+        </Container>
+      </Card>
+    </>
   );
-};
+}
