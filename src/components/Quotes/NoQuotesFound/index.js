@@ -1,12 +1,13 @@
+import { Link } from 'react-router-dom';
 import { Container } from './styles';
 
 export function NoQuotesFound() {
   return (
     <Container>
       <p>No quotes found!</p>
-      <a className='btn'>
+      <Link to="/new-quote" className='btn'>
         Add a Quote
-      </a>
+      </Link>
     </Container>
   );
 };
