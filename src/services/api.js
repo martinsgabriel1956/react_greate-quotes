@@ -20,14 +20,14 @@ export async function getAllQuotes() {
   return transformedQuotes;
 }
 
-export async function getSingleQuote(quoteId) {
-  const response = await fetch(`${FIREBASE_DOMAIN}/quotes/${quoteId}.json`);
+export async function getSingleQuote(id) {
+  const response = await fetch(`${FIREBASE_DOMAIN}/quotes/${id}.json`);
   const data = await response.json();
 
   if (!response.ok) throw new Error(data.message || 'Could not fetch quote.');
 
   const loadedQuote = {
-    id: quoteId,
+    id,
     ...data,
   };
 
@@ -52,7 +52,7 @@ export async function addQuote(quoteData) {
 }
 
 export async function addComment(requestData) {
-  const response = await fetch(`${FIREBASE_DOMAIN}/comments/${requestData.quoteId}.json`, {
+  const response = await fetch(`${FIREBASE_DOMAIN}/comments/${requestData.id}.json`, {
     method: 'POST',
     body: JSON.stringify(requestData.commentData),
     headers: {
@@ -68,8 +68,8 @@ export async function addComment(requestData) {
   return { commentId: data.name };
 }
 
-export async function getAllComments(quoteId) {
-  const response = await fetch(`${FIREBASE_DOMAIN}/comments/${quoteId}.json`);
+export async function getAllComments(id) {
+  const response = await fetch(`${FIREBASE_DOMAIN}/comments/${id}.json`);
 
   const data = await response.json();
 
