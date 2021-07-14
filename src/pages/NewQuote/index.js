@@ -6,7 +6,7 @@ import { useHttp } from '../../hooks/useHttp';
 
 import { addQuote } from '../../services/api';
 
-export function NewQuote() {
+function NewQuote() {
   const { sendRequest, status } = useHttp(addQuote);
   const history = useHistory();
 
@@ -28,3 +28,5 @@ export function NewQuote() {
     </>
   );
 }
+
+export default NewQuote;

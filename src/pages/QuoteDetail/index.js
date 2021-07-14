@@ -8,7 +8,7 @@ import { getSingleQuote } from '../../services/api';
 import { useEffect } from "react";
 import { LoadingSpinner } from "../../components/UI/LoadingSpinner";
 
-export function QuoteDetail() {
+function QuoteDetail() {
   const match = useRouteMatch();
   const { id } = useParams();
 
@@ -44,3 +44,5 @@ export function QuoteDetail() {
     </>
   );
 }
+
+export default QuoteDetail;

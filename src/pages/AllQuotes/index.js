@@ -5,7 +5,7 @@ import { useHttp } from '../../hooks/useHttp';
 import { getAllQuotes } from '../../services/api';
 import { NoQuotesFound } from '../../components/Quotes/NoQuotesFound';
 
-export function AllQuotes() {
+function AllQuotes() {
   const { sendRequest, status, data: loadedQuotes, error } = useHttp(getAllQuotes, true);
 
   useEffect(() => {
@@ -38,3 +38,5 @@ export function AllQuotes() {
     </>
   );
 }
+
+export default AllQuotes;
