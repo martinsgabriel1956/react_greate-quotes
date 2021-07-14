@@ -1,6 +1,6 @@
-import { Container } from './styles';
+import { Link } from 'react-router-dom';
 
-import { Link } from '../QuoteItem';
+import { Container } from './styles';
 
 export function QuoteItem(props) {
   return (

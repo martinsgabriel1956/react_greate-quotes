@@ -21,7 +21,6 @@ export function Routes() {
             <Route path="/new-quote" component={NewQuote} />
             <Route path="*" component={NotFound} />
           </Switch>
-        
       </Layout>
     </>
   );

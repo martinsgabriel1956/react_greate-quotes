@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { Container } from './styles'
+import { Container } from './styles';
 
 import { NewCommentForm } from './NewCommentForm';
 
