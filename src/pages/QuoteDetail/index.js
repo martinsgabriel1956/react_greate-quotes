@@ -9,16 +9,16 @@ const DUMMY_QUOTES = [
 ];
 
 export function QuoteDetail() {
-  const params = useParams();
+  const { id } = useParams();
 
-  const quote = DUMMY_QUOTES.find(quote => quote.id === params.id);
+  const quote = DUMMY_QUOTES.find(quote => quote.id === id);
 
   if(!quote) <p>No Quote Found!</p>
 
   return (
     <>
       <HighlightedQuote text={quote.text} author={quote.author} />
-      <Route path={`/quotes/${params.id}/comments`} component={Comments} />
+      <Route path={`/quotes/${id}/comments`} component={Comments} />
     </>
   );
 }
